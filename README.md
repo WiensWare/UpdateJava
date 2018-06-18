@@ -20,3 +20,8 @@ This script is highly dependent on the very awesome PowerShell App Deployment To
 
 ## Notes
 * This script installs both the 32-bit and 64-bit of Java which are often needed in an Enterprise environment.  Why both?  Some apps and browsers use the 32-bit version while some use the 64-bit version.  It's just easier to install them both.
+* A few security settings are set and locked down which are required in my environment.  Change to your taste if desired in deployment.properties located in the "Files" directory.
+  * SSLv2Hello is disabled
+  * TLSv1.0 is enabled
+  * TLSv1.1 is disabled
+  * TLSv1.2 is disabled
