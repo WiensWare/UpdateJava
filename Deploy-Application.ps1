@@ -58,7 +58,7 @@ Try {
 	## Variables: Application
 	[string]$appVendor = 'Oracle'
 	[string]$appName = 'Java'
-	[string]$appVersion = '8 Update 181'
+	[string]$appVersion = '8 Update 211'
 	[string]$appArch = ''
 	[string]$appLang = 'EN'
 	[string]$appRevision = '01'
@@ -120,7 +120,7 @@ Try {
 		
 		## <Perform Pre-Installation tasks here>
     	Show-InstallationProgress "Removing old versions of Java. Please Wait..."
-	    Remove-MSIApplications "Java" -ExcludeFromUninstall @(,,@('DisplayName', 'Java 8 Update 181', 'RegEx'))
+	    Remove-MSIApplications "Java" -ExcludeFromUninstall @(,,@('DisplayName', 'Java 8 Update 211', 'RegEx'))
 		
 		
 		##*===============================================
@@ -135,7 +135,7 @@ Try {
 		}
 		
 		## <Perform Installation tasks here>
-        if ((Get-InstalledApplication -Exact 'Java 8 Update 181') -eq $null)
+        if ((Get-InstalledApplication -Exact 'Java 8 Update 211') -eq $null)
         {
     	    Show-InstallationProgress "Installing 32-bit version of Java"
 			Execute-Process "JavaX32.exe" -Parameters "/s"
@@ -145,7 +145,7 @@ Try {
         # Only do for 64-bit O/S
         if ($Is64Bit)
         {
-            if ((Get-InstalledApplication -Exact 'Java 8 Update 181 (64-bit)') -eq $null)
+            if ((Get-InstalledApplication -Exact 'Java 8 Update 211 (64-bit)') -eq $null)
             {
     	        Show-InstallationProgress "Installing 64-bit version of Java"
 				Execute-Process "JavaX64.exe" -Parameters "/s"
